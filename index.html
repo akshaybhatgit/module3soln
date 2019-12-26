@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app='MenuCategoriesApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Using $http Service</title>
+	<style>
+      .emptyMessage {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button > span {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Using $http Service</h1>
+
+    <div ng-controller='MenuCategoriesController as menu'>
+	 <input type="text" ng-model="menu.itemName" placeholder="item name">
+	 <button ng-click="menu.addItem();">Narrow It Down For Me!</button>
+      <h3>List of Menu Categories</h3>
+	  <div ng-if="menu.categories.length==0" class="emptyMessage" ng-model="menu.message">{{menu.message}}Nothing to display</div> 
+	    <found
+        items="menu.categories"
+        on-remove="menu.removeItem(index)"></found>
+    </div>
+
+  </body>
+</html>
