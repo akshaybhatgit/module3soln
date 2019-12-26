@@ -10,7 +10,7 @@ angular.module('MenuCategoriesApp', [])
 
 function foundDirective() {
   var ddo = {
-    templateUrl: 'foundList.html',
+    templateUrl: 'foundlist.html',
     scope: {
       founditems: '<',
       onRemove: '&'
